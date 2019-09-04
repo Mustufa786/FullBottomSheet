@@ -10,6 +10,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            tools:listitem="@layout/list_item"
             android:id="@+id/peopleList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

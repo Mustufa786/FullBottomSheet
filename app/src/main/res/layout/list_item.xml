@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/parentLayout"
         android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
         android:background="@android:color/white"
         android:focusable="true"
-        android:layout_height="?attr/actionBarSize">
+        android:orientation="vertical"
+        android:clickable="true"
+        app:mrl_rippleColor="@color/colorAccent">
 
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
 
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userImage"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/f_1"/>
+                android:layout_marginStart="16dp"
+                android:src="@drawable/f_1" />
 
             <TextView
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:text="Susan"
-                android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
-                android:layout_width="0dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/userImage"
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:text="Susan"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
-    </RelativeLayout>
+    </com.balysv.materialripple.MaterialRippleLayout>
 </layout>

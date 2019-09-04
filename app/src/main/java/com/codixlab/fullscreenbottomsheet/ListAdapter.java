@@ -2,6 +2,7 @@ package com.codixlab.fullscreenbottomsheet;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     Context context;
     List<People> list;
+    OnClickItem onClickItem;
 
     public ListAdapter(Context context, List<People> list) {
 
@@ -28,15 +30,24 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        ListItemBinding bi = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.list_item, null, false);
+        ListItemBinding bi = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.list_item, parent, false);
 
         return new ViewHolder(bi);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
-        People people = list.get(position);
+        holder.bi.userImage.setImageResource(list.get(position).getImage());
+        holder.bi.userName.setText(list.get(position).getName());
+
+        holder.bi.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                onClickItem.OnClick(list.get(position));
+            }
+        });
 
     }
 
@@ -55,5 +66,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
             bi = itemView;
         }
+    }
+
+    public interface OnClickItem {
+
+        void OnClick(People people);
+    }
+
+    public void setOnItemClickListener(OnClickItem clickListener) {
+
+        onClickItem = clickListener;
+
     }
 }

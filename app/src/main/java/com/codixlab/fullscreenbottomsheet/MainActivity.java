@@ -2,9 +2,11 @@ package com.codixlab.fullscreenbottomsheet;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.codixlab.fullscreenbottomsheet.databinding.ActivityMainBinding;
 
@@ -16,11 +18,35 @@ public class MainActivity extends AppCompatActivity {
 
 
     ActivityMainBinding bi;
+    ListAdapter adapter;
+    List<People> peopleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+
+        init();
+    }
+
+    private void init() {
+
+        peopleList = getPeopleData();
+        peopleList.addAll(getPeopleData());
+        bi.peopleList.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new ListAdapter(this, peopleList);
+        bi.peopleList.setHasFixedSize(true);
+        bi.peopleList.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new ListAdapter.OnClickItem() {
+            @Override
+            public void OnClick(People people) {
+
+                Toast.makeText(MainActivity.this, "Name " + people.getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 
