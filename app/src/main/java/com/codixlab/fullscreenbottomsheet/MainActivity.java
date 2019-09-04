@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new ListAdapter.OnClickItem() {
             @Override
             public void OnClick(People people) {
+                if (people == null) return;
                 BottomSheet bottomSheet = new BottomSheet();
                 bottomSheet.setPeople(people);
                 bottomSheet.show(getSupportFragmentManager(), bottomSheet.getTag());

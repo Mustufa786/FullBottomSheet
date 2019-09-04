@@ -34,6 +34,7 @@
                         android:tint="@android:color/white" />
 
                     <TextView
+                        android:id="@+id/nameToolbar"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -77,6 +78,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/profileLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -382,11 +384,16 @@
 
                     </LinearLayout>
 
+                    <View
+                        android:id="@+id/lyt_spacer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
 
             </androidx.core.widget.NestedScrollView>
+
 
 
         </LinearLayout>
