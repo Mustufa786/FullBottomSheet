@@ -2,7 +2,6 @@ package com.codixlab.fullscreenbottomsheet;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -42,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new ListAdapter.OnClickItem() {
             @Override
             public void OnClick(People people) {
-
-                Toast.makeText(MainActivity.this, "Name " + people.getName(), Toast.LENGTH_SHORT).show();
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setPeople(people);
+                bottomSheet.show(getSupportFragmentManager(), bottomSheet.getTag());
             }
         });
 
