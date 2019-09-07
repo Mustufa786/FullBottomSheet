@@ -140,12 +140,14 @@
 
 
                                     <TextView
+                                        android:id="@+id/number1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="(000) 000-000"
                                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                                     <TextView
+                                        android:id="@+id/typeOfNumber1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Mobile"
@@ -176,12 +178,14 @@
 
 
                                     <TextView
+                                        android:id="@+id/number2"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="(000) 000-000"
                                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                                     <TextView
+                                        android:id="@+id/typeOfNumber2"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Work"
@@ -254,12 +258,14 @@
 
 
                                 <TextView
+                                    android:id="@+id/email1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="email@email.com"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                                 <TextView
+                                    android:id="@+id/emailType1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Personal"
@@ -275,12 +281,14 @@
 
 
                                 <TextView
+                                    android:id="@+id/email2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="email@email.com"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                                 <TextView
+                                    android:id="@+id/emailType2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Work"
@@ -344,15 +352,17 @@
 
 
                                 <TextView
+                                    android:id="@+id/address1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Liyaari Town"
+                                    android:text="ABC Street Sector 1/2"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                                 <TextView
+                                    android:id="@+id/country1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Karachi,Pakistan"
+                                    android:text="XYZ Country"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                             </LinearLayout>
@@ -365,15 +375,17 @@
 
 
                                 <TextView
+                                    android:id="@+id/addres2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Sakhi Hassan"
+                                    android:text="ABC Street Sector 1/2"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                                 <TextView
+                                    android:id="@+id/country2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Lahore,Pakistan"
+                                    android:text="XYZ Country"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                             </LinearLayout>
@@ -385,7 +397,7 @@
                     </LinearLayout>
 
                     <View
-                        android:id="@+id/lyt_spacer"
+                        android:id="@+id/extraSpace"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
@@ -393,7 +405,6 @@
 
 
             </androidx.core.widget.NestedScrollView>
-
 
 
         </LinearLayout>

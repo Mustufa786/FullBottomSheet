@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -20,11 +21,7 @@ public class BottomSheet extends BottomSheetDialogFragment {
 
     BottomSheetBehavior bottomSheetBehavior;
     LayoutBottomSheetBinding bi;
-    People people;
 
-    public void setPeople(People people) {
-        this.people = people;
-    }
 
     public static int getScreenHeight() {
         return Resources.getSystem().getDisplayMetrics().heightPixels;
@@ -39,13 +36,9 @@ public class BottomSheet extends BottomSheetDialogFragment {
         bottomSheet.setContentView(view);
         bottomSheetBehavior = BottomSheetBehavior.from((View) (view.getParent()));
         bottomSheetBehavior.setPeekHeight(BottomSheetBehavior.PEEK_HEIGHT_AUTO);
-        bi.userImage.setImageResource(people.getImage());
-        bi.userName.setText(people.getName());
-
-        bi.nameToolbar.setText(people.getName());
 
 
-        bi.lytSpacer.setMinimumHeight(getScreenHeight() / 2);
+        bi.extraSpace.setMinimumHeight(getScreenHeight() / 2);
 
 
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
@@ -70,6 +63,28 @@ public class BottomSheet extends BottomSheetDialogFragment {
             @Override
             public void onSlide(@NonNull View view, float v) {
 
+            }
+        });
+
+        bi.cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dismiss();
+            }
+        });
+
+        bi.editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Edit button clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        bi.moreBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "More button clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
